@@ -4,91 +4,164 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Arquivo Confidencial</title>
+<title>Arquivo</title>
 
 <style>
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    padding: 0;
     background: #050505;
-    color: white;
+    height: 100vh;
+    overflow: hidden;
     font-family: Arial, sans-serif;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .container {
-    max-width: 500px;
-    margin: auto;
-    padding: 30px 20px;
-}
-
-h1 {
-    font-size: 32px;
-    letter-spacing: 3px;
-    color: #b30000;
-}
-
-img {
+    text-align: center;
     width: 100%;
-    max-width: 450px;
-    border: 3px solid #8b0000;
-    box-shadow: 0 0 20px black;
 }
 
-.card {
-    margin-top: 25px;
-    background: #111;
-    border: 1px solid #444;
-    padding: 20px;
-    border-radius: 10px;
+
+.capa {
+    width: 95%;
+    max-width: 600px;
+    animation: aparecer 1.5s ease;
 }
 
-p {
-    line-height: 1.6;
-}
 
 button {
-    margin-top: 20px;
-    padding: 15px 30px;
+    margin-top: 25px;
+    padding: 15px 45px;
     background: #8b0000;
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
+    letter-spacing: 2px;
     cursor: pointer;
 }
 
+
 button:hover {
-    background: #c00000;
+    background: #b30000;
+}
+
+
+/* tela da senha */
+
+.senha {
+    display: none;
+    color: white;
+    text-align: center;
+}
+
+
+input {
+    margin-top: 20px;
+    padding: 15px;
+    width: 250px;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+.abrir {
+    animation: abrir 1s forwards;
+}
+
+
+@keyframes aparecer {
+
+from {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+to {
+    opacity: 1;
+    transform: scale(1);
+}
+
+}
+
+
+@keyframes abrir {
+
+0% {
+    transform: scale(1);
+    opacity: 1;
+}
+
+100% {
+    transform: scale(1.5);
+    opacity: 0;
+}
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
-<div class="container">
 
-<h1>ARQUIVO CONFIDENCIAL</h1>
+<div class="container" id="inicio">
 
-<img src="capa.jpg" alt="Arquivo">
+<img class="capa" src="capa.jpg">
 
-<div class="card">
+<br>
 
-<p>
-Este arquivo contém informações especiais.
-<br><br>
-Apenas pessoas autorizadas devem acessar este conteúdo.
-</p>
-
-<button>
-ACESSAR ARQUIVO
+<button onclick="abrirArquivo()">
+ABRIR ARQUIVO
 </button>
 
 </div>
 
+
+
+<div class="senha" id="senha">
+
+<h2>DIGITE A SENHA</h2>
+
+<input type="password" placeholder="Senha">
+
+<br>
+
+<button>
+ENTRAR
+</button>
+
 </div>
+
+
+
+<script>
+
+function abrirArquivo(){
+
+document.getElementById("inicio").classList.add("abrir");
+
+setTimeout(function(){
+
+document.getElementById("inicio").style.display="none";
+
+document.getElementById("senha").style.display="block";
+
+},1000);
+
+}
+
+</script>
+
 
 </body>
 </html>
