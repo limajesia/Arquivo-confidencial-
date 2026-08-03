@@ -1,151 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo Confidencial</title>
 
-<title>Arquivo Confidencial</title>
+    <style>
 
-<style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        body{
 
-body{
+            background:#111;
 
-    background:#111;
-    font-family:Arial, Helvetica, sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+            min-height:100vh;
 
-    min-height:100vh;
+            font-family:Arial, Helvetica, sans-serif;
 
-}
+        }
 
-#capa{
+        .arquivo{
 
-    width:700px;
-    max-width:90%;
+            width:700px;
+            max-width:90%;
 
-    background:#d8c49b;
+            background:#d8c49b;
 
-    border:8px solid #8e7855;
+            border:8px solid #8a7653;
 
-    padding:60px;
+            padding:60px;
 
-    box-shadow:0 0 40px rgba(0,0,0,.6);
+            position:relative;
 
-    position:relative;
+            box-shadow:0 0 40px rgba(0,0,0,.5);
 
-}
+        }
 
-#capa::before{
+        .carimbo{
 
-content:"CONFIDENCIAL";
+            position:absolute;
 
-position:absolute;
+            top:30px;
+            right:30px;
 
-right:25px;
-top:30px;
+            border:4px solid #b30000;
 
-color:#a10000;
+            color:#b30000;
 
-border:4px solid #a10000;
+            padding:10px 18px;
 
-padding:8px 18px;
+            font-size:30px;
 
-font-size:34px;
+            font-weight:bold;
 
-font-weight:bold;
+            transform:rotate(-12deg);
 
-transform:rotate(-12deg);
+        }
 
-}
+        .codigo{
 
-.numero{
+            color:#555;
 
-font-size:15px;
+            letter-spacing:4px;
 
-letter-spacing:4px;
+            margin-bottom:30px;
 
-color:#444;
+            font-size:15px;
 
-margin-bottom:35px;
+        }
 
-}
+        h1{
 
-h1{
+            font-size:52px;
 
-font-size:55px;
+            color:#222;
 
-color:#202020;
+            margin-bottom:10px;
 
-margin-bottom:20px;
+        }
 
-}
+        h2{
 
-h2{
+            color:#555;
 
-font-size:25px;
+            margin-bottom:30px;
 
-margin-bottom:15px;
+            font-weight:normal;
 
-color:#555;
+        }
 
-}
+        p{
 
-p{
+            color:#333;
 
-font-size:18px;
+            font-size:19px;
 
-line-height:30px;
+            line-height:30px;
 
-color:#333;
+        }
 
-}
+        button{
 
-button{
+            margin-top:45px;
 
-margin-top:45px;
+            padding:16px 45px;
 
-padding:18px 55px;
+            border:none;
 
-font-size:20px;
+            background:#222;
 
-background:#2b2b2b;
+            color:white;
 
-color:white;
+            font-size:20px;
 
-border:none;
+            cursor:pointer;
 
-cursor:pointer;
+            transition:.3s;
 
-transition:.3s;
+        }
 
-}
+        button:hover{
 
-button:hover{
+            background:#8b0000;
 
-background:#8d0000;
+            transform:scale(1.05);
 
-transform:scale(1.05);
+        }
 
-}
-
-</style>
+    </style>
 
 </head>
 
 <body>
 
-<section id="capa">
+<div class="arquivo">
 
-<div class="numero">
+<div class="carimbo">
+CONFIDENCIAL
+</div>
+
+<div class="codigo">
 ARQUIVO Nº 01-2909
 </div>
 
@@ -154,20 +157,16 @@ ARQUIVO Nº 01-2909
 <h2>Acesso Restrito</h2>
 
 <p>
-
-Este arquivo contém registros pessoais e memórias importantes.
-
-Apenas pessoas autorizadas podem continuar.
-
+Este arquivo contém registros pessoais e lembranças importantes.
+Somente pessoas autorizadas poderão continuar.
 </p>
 
 <button>
-
 ENTRAR
-
 </button>
 
-</section>
+</div>
 
 </body>
+
 </html>
