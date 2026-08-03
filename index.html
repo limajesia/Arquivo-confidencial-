@@ -1,208 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Arquivo</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+background:#050505;
+font-family:Arial,sans-serif;
+color:white;
+}
+
+
+/* CAPA */
+
+#inicio{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+
+.capa{
+width:95%;
+max-width:650px;
+}
+
+
+button{
+margin-top:25px;
+padding:15px 45px;
+background:#8b0000;
+color:white;
+border:none;
+font-size:18px;
+letter-spacing:2px;
+cursor:pointer;
+}
+
+
+button:hover{
+background:#b30000;
+}
+
+
+
+/* SENHA */
+
+#senha{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+
+input{
+margin-top:20px;
+padding:15px;
+width:260px;
+font-size:18px;
+text-align:center;
+}
+
+
+.erro{
+color:#ff4444;
+}
+
+
+
+/* ARQUIVO */
+
+#arquivo{
+
+display:none;
+
+min-height:100vh;
+
+padding:40px 20px;
+
+background-image:url("interno.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+background-attachment:fixed;
+
+}
+
+
+
+.blog{
+
+max-width:650px;
+
+margin:auto;
+
+background:rgba(0,0,0,0.45);
+
+padding:30px;
+
+}
+
+
+
+.titulo{
+
+text-align:center;
+
+font-size:32px;
+
+letter-spacing:5px;
+
+margin-bottom:50px;
+
+}
+
+
+
+.post{
+
+margin-bottom:70px;
+
+text-align:center;
+
+}
+
+
+
+.post img{
+
+width:100%;
+
+max-width:550px;
+
+background:white;
+
+padding:12px;
+
+box-shadow:0 10px 25px black;
+
+}
+
+
+
+.texto{
+
+margin-top:20px;
+
+font-size:20px;
+
+line-height:1.6;
+
+background:rgba(0,0,0,0.6);
+
+padding:20px;
+
+border-left:4px solid #8b0000;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="inicio">
+
+<img class="capa" src="capa.jpg">
+
+<button onclick="abrirSenha()">
+
+ABRIR ARQUIVO
+
+</button>
+
+</div>
+
+
+
+<div id="senha">
+
+<h2>DIGITE A SENHA</h2>
+
+<input id="codigo" type="password" placeholder="Senha">
+
+<button onclick="verificarSenha()">
+
+ENTRAR
+
+</button>
+
+<p class="erro" id="erro"></p>
+
+</div>
+
+
+
+<div id="arquivo">
+
+<div class="blog">
+
+<h1 class="titulo">
+ARQUIVO CONFIDENCIAL
+</h1>
+
+
 <div class="post">
-
-<img src="foto6.jpeg">
-
+<img src="foto1.jpeg">
 <div class="texto">
-Registro 06<br>
-Memórias importantes.
+Registro 01
 </div>
-
 </div>
 
 
 <div class="post">
+<img src="foto2.jpeg">
+<div class="texto">
+Registro 02
+</div>
+</div>
 
+
+<div class="post">
+<img src="foto3.jpeg">
+<div class="texto">
+Registro 03
+</div>
+</div>
+
+
+<div class="post">
+<img src="foto4.jpeg">
+<div class="texto">
+Registro 04
+</div>
+</div>
+
+
+<div class="post">
+<img src="foto5.jpeg">
+<div class="texto">
+Registro 05
+</div>
+</div>
+
+
+<div class="post">
+<img src="foto6.jpeg">
+<div class="texto">
+Registro 06
+</div>
+</div>
+
+
+<div class="post">
 <img src="foto7.jpeg">
-
 <div class="texto">
 Registro 07
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto8.jpeg">
-
 <div class="texto">
 Registro 08
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto9.jpeg">
-
 <div class="texto">
 Registro 09
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto10.jpeg">
-
 <div class="texto">
 Registro 10
 </div>
-
 </div>
-
-
 <div class="post">
-
 <img src="foto11.jpeg">
-
 <div class="texto">
 Registro 11
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto12.jpeg">
-
 <div class="texto">
 Registro 12
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto13.jpeg">
-
 <div class="texto">
 Registro 13
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto14.jpeg">
-
 <div class="texto">
 Registro 14
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto15.jpeg">
-
 <div class="texto">
 Registro 15
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto16.jpeg">
-
 <div class="texto">
 Registro 16
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto17.jpeg">
-
 <div class="texto">
 Registro 17
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto18.jpeg">
-
 <div class="texto">
 Registro 18
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto19.jpeg">
-
 <div class="texto">
 Registro 19
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto20.jpeg">
-
 <div class="texto">
 Registro 20
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto21.jpeg">
-
 <div class="texto">
 Registro 21
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto22.jpeg">
-
 <div class="texto">
 Registro 22
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto23.jpeg">
-
 <div class="texto">
 Registro 23
 </div>
-
 </div>
 
 
 <div class="post">
-
 <img src="foto24.jpeg">
-
 <div class="texto">
 Registro 24
 </div>
+</div>
+
 
 </div>
+
+</div>
+
+
+
+<script>
+
+
+function abrirSenha(){
+
+document.getElementById("inicio").style.display="none";
+
+document.getElementById("senha").style.display="flex";
+
+}
+
+
+
+function verificarSenha(){
+
+let senha = document.getElementById("codigo").value;
+
+
+if(senha === "07082001DRB"){
+
+
+document.getElementById("senha").style.display="none";
+
+
+document.getElementById("arquivo").style.display="block";
+
+
+}
+
+else{
+
+
+document.getElementById("erro").innerHTML="SENHA INCORRETA";
+
+
+}
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
