@@ -15,6 +15,7 @@ box-sizing:border-box;
 
 
 body{
+
 margin:0;
 background:#050505;
 height:100vh;
@@ -23,24 +24,59 @@ justify-content:center;
 align-items:center;
 font-family:Arial,sans-serif;
 overflow:hidden;
-perspective:1200px;
+perspective:1500px;
+
 }
 
 
 
-.container{
+.livro{
+
+width:90%;
+max-width:650px;
 text-align:center;
-width:100%;
 transform-style:preserve-3d;
+
 }
 
 
 
 .capa{
-width:95%;
-max-width:650px;
-display:block;
-margin:auto;
+
+width:100%;
+transform-origin:left center;
+backface-visibility:hidden;
+
+}
+
+
+
+.abrir{
+
+animation:virarPagina 1.8s forwards;
+
+}
+
+
+
+@keyframes virarPagina{
+
+
+0%{
+
+transform:rotateY(0deg);
+
+}
+
+
+
+100%{
+
+transform:rotateY(-110deg);
+
+}
+
+
 }
 
 
@@ -51,12 +87,13 @@ margin-top:25px;
 padding:15px 45px;
 background:#8b0000;
 color:white;
-border:none;
+border:0;
 font-size:18px;
-letter-spacing:2px;
 cursor:pointer;
+letter-spacing:2px;
 
 }
+
 
 
 button:hover{
@@ -67,62 +104,11 @@ background:#b30000;
 
 
 
-.abrindo{
-
-animation:abrirLivro 1.5s forwards;
-
-transform-origin:left center;
-
-}
-
-
-
-@keyframes abrirLivro{
-
-
-0%{
-
-transform:perspective(1200px) rotateY(0deg);
-
-opacity:1;
-
-}
-
-
-
-50%{
-
-transform:perspective(1200px) rotateY(-70deg);
-
-opacity:1;
-
-}
-
-
-
-100%{
-
-transform:perspective(1200px) rotateY(-120deg);
-
-opacity:0;
-
-}
-
-
-}
-
-
-
-
 .senha{
 
 display:none;
-
 color:white;
-
 text-align:center;
-
-animation:entrada 1s;
 
 }
 
@@ -131,40 +117,9 @@ animation:entrada 1s;
 input{
 
 padding:15px;
-
-width:250px;
-
 font-size:18px;
-
+width:250px;
 text-align:center;
-
-margin-top:20px;
-
-}
-
-
-
-@keyframes entrada{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(30px);
-
-}
-
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
 
 }
 
@@ -179,14 +134,13 @@ transform:translateY(0);
 <body>
 
 
-
-<div class="container" id="inicio">
+<div class="livro" id="livro">
 
 
 <img class="capa" src="capa.jpg">
 
 
-<button onclick="abrirArquivo()">
+<button onclick="abrirLivro()">
 
 ABRIR ARQUIVO
 
@@ -197,14 +151,12 @@ ABRIR ARQUIVO
 
 
 
-
 <div class="senha" id="senha">
 
 
 <h2>DIGITE A SENHA</h2>
 
-
-<input type="password" placeholder="Senha">
+<input type="password">
 
 
 <br>
@@ -221,37 +173,33 @@ ENTRAR
 
 
 
-
-
 <script>
 
 
-function abrirArquivo(){
+function abrirLivro(){
 
 
-document.getElementById("inicio").classList.add("abrindo");
+document.querySelector(".capa").classList.add("abrir");
 
 
 
 setTimeout(function(){
 
 
-document.getElementById("inicio").style.display="none";
+document.getElementById("livro").style.display="none";
 
 
 document.getElementById("senha").style.display="block";
 
 
-},1500);
+},1800);
 
 
 
 }
 
 
-
 </script>
-
 
 
 </body>
