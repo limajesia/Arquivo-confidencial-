@@ -9,129 +9,103 @@
 
 <style>
 
-* {
-    box-sizing: border-box;
+*{
+box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    background: #050505;
-    height: 100vh;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.container {
-    text-align: center;
-    width: 100%;
+body{
+margin:0;
+background:#050505;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial,sans-serif;
+overflow:hidden;
 }
 
 
-.capa {
-    width: 95%;
-    max-width: 600px;
-    animation: aparecer 1.5s ease;
+.container{
+text-align:center;
+transition:1s;
 }
 
 
-button {
-    margin-top: 25px;
-    padding: 15px 45px;
-    background: #8b0000;
-    color: white;
-    border: none;
-    font-size: 18px;
-    letter-spacing: 2px;
-    cursor: pointer;
+.capa{
+width:95%;
+max-width:650px;
 }
 
 
-button:hover {
-    background: #b30000;
+button{
+margin-top:25px;
+padding:15px 45px;
+background:#8b0000;
+color:white;
+border:none;
+font-size:18px;
+letter-spacing:2px;
+cursor:pointer;
 }
 
 
-.senha {
-    display: none;
-    color: white;
-    text-align: center;
+button:hover{
+background:#b30000;
 }
 
 
-input {
-    margin-top: 20px;
-    padding: 15px;
-    width: 250px;
-    font-size: 18px;
-    text-align: center;
+.abrindo{
+animation:abrir 1.2s forwards;
 }
 
 
-.abrir {
-    animation: abrir 1s forwards;
+.senha{
+display:none;
+color:white;
+text-align:center;
+animation:entrada 1s;
 }
 
 
-.efeito {
-    position: fixed;
-    inset: 0;
-    background: rgba(255,255,255,0.08);
-    opacity: 0;
-    pointer-events: none;
+input{
+padding:15px;
+width:250px;
+font-size:18px;
+text-align:center;
+margin-top:20px;
 }
 
 
-.efeito.ativo {
-    animation: scanner 1s;
+@keyframes abrir{
+
+0%{
+transform:scale(1);
+opacity:1;
 }
 
-
-@keyframes aparecer {
-
-from {
-    opacity: 0;
-    transform: scale(0.8);
+50%{
+transform:scale(1.1);
+filter:brightness(2);
 }
 
-to {
-    opacity: 1;
-    transform: scale(1);
+100%{
+transform:scale(1.5);
+opacity:0;
 }
 
 }
 
 
-@keyframes abrir {
+@keyframes entrada{
 
-0% {
-    transform: scale(1);
-    opacity: 1;
+from{
+opacity:0;
+transform:translateY(30px);
 }
 
-100% {
-    transform: scale(1.5);
-    opacity: 0;
-}
-
-}
-
-
-@keyframes scanner {
-
-0% {
-    opacity: 0;
-}
-
-40% {
-    opacity: 1;
-}
-
-100% {
-    opacity: 0;
+to{
+opacity:1;
+transform:translateY(0);
 }
 
 }
@@ -157,9 +131,6 @@ ABRIR ARQUIVO
 </div>
 
 
-<div class="efeito"></div>
-
-
 <div class="senha" id="senha">
 
 <h2>DIGITE A SENHA</h2>
@@ -175,14 +146,11 @@ ENTRAR
 </div>
 
 
-
 <script>
 
 function abrirArquivo(){
 
-document.querySelector(".efeito").classList.add("ativo");
-
-document.getElementById("inicio").classList.add("abrir");
+document.getElementById("inicio").classList.add("abrindo");
 
 
 setTimeout(function(){
@@ -191,7 +159,8 @@ document.getElementById("inicio").style.display="none";
 
 document.getElementById("senha").style.display="block";
 
-},1000);
+},1200);
+
 
 }
 
