@@ -7,7 +7,34 @@
 <title>Arquivo</title>
 
 <style>
+.efeito {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.08);
+    opacity: 0;
+    pointer-events: none;
+}
 
+.efeito.ativo {
+    animation: scanner 1s;
+}
+
+
+@keyframes scanner {
+
+0% {
+    opacity: 0;
+}
+
+40% {
+    opacity: 1;
+}
+
+100% {
+    opacity: 0;
+}
+
+}
 * {
     box-sizing: border-box;
 }
@@ -124,7 +151,7 @@ to {
 ABRIR ARQUIVO
 </button>
 
-</div>
+<div class="efeito"></div>
 
 
 
@@ -148,6 +175,19 @@ ENTRAR
 
 function abrirArquivo(){
 
+document.querySelector(".efeito").classList.add("ativo");
+
+document.getElementById("inicio").classList.add("abrir");
+
+setTimeout(function(){
+
+document.getElementById("inicio").style.display="none";
+
+document.getElementById("senha").style.display="block";
+
+},1000);
+
+}
 document.getElementById("inicio").classList.add("abrir");
 
 setTimeout(function(){
