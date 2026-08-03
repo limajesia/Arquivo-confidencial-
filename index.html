@@ -1,40 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Arquivo</title>
 
 <style>
-.efeito {
-    position: fixed;
-    inset: 0;
-    background: rgba(255,255,255,0.08);
-    opacity: 0;
-    pointer-events: none;
-}
 
-.efeito.ativo {
-    animation: scanner 1s;
-}
-
-
-@keyframes scanner {
-
-0% {
-    opacity: 0;
-}
-
-40% {
-    opacity: 1;
-}
-
-100% {
-    opacity: 0;
-}
-
-}
 * {
     box-sizing: border-box;
 }
@@ -81,8 +55,6 @@ button:hover {
 }
 
 
-/* tela da senha */
-
 .senha {
     display: none;
     color: white;
@@ -101,6 +73,20 @@ input {
 
 .abrir {
     animation: abrir 1s forwards;
+}
+
+
+.efeito {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.08);
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.efeito.ativo {
+    animation: scanner 1s;
 }
 
 
@@ -133,6 +119,23 @@ to {
 
 }
 
+
+@keyframes scanner {
+
+0% {
+    opacity: 0;
+}
+
+40% {
+    opacity: 1;
+}
+
+100% {
+    opacity: 0;
+}
+
+}
+
 </style>
 
 </head>
@@ -151,8 +154,10 @@ to {
 ABRIR ARQUIVO
 </button>
 
-<div class="efeito"></div>
+</div>
 
+
+<div class="efeito"></div>
 
 
 <div class="senha" id="senha">
@@ -179,16 +184,6 @@ document.querySelector(".efeito").classList.add("ativo");
 
 document.getElementById("inicio").classList.add("abrir");
 
-setTimeout(function(){
-
-document.getElementById("inicio").style.display="none";
-
-document.getElementById("senha").style.display="block";
-
-},1000);
-
-}
-document.getElementById("inicio").classList.add("abrir");
 
 setTimeout(function(){
 
