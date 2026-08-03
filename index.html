@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Arquivo Confidencial</title>
 
 <style>
 body {
-    background: black;
+    background: #000;
     color: white;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     text-align: center;
-    padding-top: 80px;
+    padding: 40px;
 }
 
 .caixa {
     border: 2px solid red;
-    padding: 30px;
-    width: 300px;
+    padding: 25px;
+    max-width: 350px;
     margin: auto;
 }
 
-img {
-    width: 250px;
-    margin: 10px;
+button {
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 #conteudo {
     display: none;
+}
+
+img {
+    width: 90%;
+    max-width: 400px;
+    margin: 15px;
 }
 </style>
 
@@ -35,9 +42,9 @@ img {
 
 <div class="caixa" id="login">
 
-<h2>🔒 Arquivo Confidencial</h2>
+<h1>🔒 Arquivo Confidencial</h1>
 
-<p>Digite a senha:</p>
+<p>Digite a senha de acesso:</p>
 
 <input type="password" id="senha">
 
@@ -52,15 +59,13 @@ img {
 
 <div id="conteudo">
 
-<h1>Relatório Secreto</h1>
+<h1>🗂 Relatório Secreto</h1>
 
 <p>
-Aqui entram seus textos, pistas e mensagens.
+Coloque aqui seus textos, mensagens e pistas.
 </p>
 
-<img src="foto1.jpg">
-
-<img src="foto2.jpg">
+<!-- Suas fotos entram aqui depois -->
 
 </div>
 
@@ -71,8 +76,7 @@ function entrar(){
 
 let senha = document.getElementById("senha").value;
 
-
-if(senha == "07082001"){
+if(senha == "1998"){
 
 document.getElementById("login").style.display="none";
 
