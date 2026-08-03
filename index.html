@@ -19,23 +19,22 @@ body{
 
 margin:0;
 background:#050505;
-height:100vh;
 font-family:Arial,sans-serif;
 color:white;
-
-display:flex;
-justify-content:center;
-align-items:center;
 
 }
 
 
-/* CAPA INICIAL */
+
+/* CAPA */
 
 #inicio{
 
-text-align:center;
-width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 
 }
 
@@ -81,9 +80,17 @@ background:#b30000;
 #senha{
 
 display:none;
+
+height:100vh;
+
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
 text-align:center;
 
 }
+
 
 
 input{
@@ -110,21 +117,15 @@ color:#ff4444;
 
 
 
-/* ARQUIVO ABERTO */
+/* ALBUM */
 
 #arquivo{
 
 display:none;
 
-position:fixed;
+min-height:100vh;
 
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100vh;
+padding:40px 20px;
 
 background-image:url("interno.jpg");
 
@@ -132,58 +133,73 @@ background-size:cover;
 
 background-position:center;
 
-overflow:hidden;
+background-attachment:fixed;
 
 }
 
 
 
+.album{
 
-/* FOTOS */
+max-width:650px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+
 
 .foto{
 
-position:absolute;
+width:90%;
 
-width:130px;
+max-width:450px;
 
-border:8px solid white;
+margin:35px 0;
 
-box-shadow:0 5px 15px black;
+padding:12px;
+
+background:white;
+
+box-shadow:0 8px 25px black;
 
 }
 
 
 
+.foto:nth-child(even){
 
-.f1{top:40px;left:40px;transform:rotate(-5deg);}
-.f2{top:60px;right:50px;transform:rotate(6deg);}
-.f3{top:220px;left:180px;transform:rotate(3deg);}
-.f4{top:350px;right:120px;transform:rotate(-7deg);}
-.f5{bottom:60px;left:60px;transform:rotate(5deg);}
+transform:rotate(2deg);
 
-.f6{top:120px;left:420px;transform:rotate(-4deg);}
-.f7{top:400px;left:250px;transform:rotate(7deg);}
-.f8{bottom:200px;right:350px;transform:rotate(-5deg);}
-.f9{top:180px;right:280px;transform:rotate(4deg);}
-.f10{bottom:80px;left:350px;transform:rotate(-6deg);}
+}
 
-.f11{top:300px;right:40px;transform:rotate(5deg);}
-.f12{bottom:300px;left:40px;transform:rotate(-4deg);}
-.f13{top:500px;left:180px;transform:rotate(6deg);}
-.f14{top:30px;left:280px;transform:rotate(-8deg);}
-.f15{bottom:150px;right:220px;transform:rotate(5deg);}
 
-.f16{top:350px;left:500px;transform:rotate(-6deg);}
-.f17{bottom:40px;right:40px;transform:rotate(4deg);}
-.f18{top:220px;right:500px;transform:rotate(-5deg);}
-.f19{bottom:250px;left:500px;transform:rotate(7deg);}
-.f20{top:550px;right:300px;transform:rotate(-4deg);}
 
-.f21{top:450px;right:450px;transform:rotate(6deg);}
-.f22{bottom:350px;right:80px;transform:rotate(-7deg);}
-.f23{top:100px;right:450px;transform:rotate(5deg);}
-.f24{bottom:100px;left:550px;transform:rotate(-6deg);}
+.foto:nth-child(odd){
+
+transform:rotate(-2deg);
+
+}
+
+
+
+.titulo{
+
+text-align:center;
+
+font-size:30px;
+
+letter-spacing:4px;
+
+margin-bottom:30px;
+
+}
 
 
 
@@ -201,9 +217,6 @@ box-shadow:0 5px 15px black;
 
 
 <img class="capa" src="capa.jpg">
-
-
-<br>
 
 
 <button onclick="abrirSenha()">
@@ -228,9 +241,6 @@ ABRIR ARQUIVO
 <input id="codigo" type="password" placeholder="Senha">
 
 
-<br>
-
-
 <button onclick="verificarSenha()">
 
 ENTRAR
@@ -247,41 +257,56 @@ ENTRAR
 
 
 
+
 <div id="arquivo">
 
 
-<img class="foto f1" src="foto1.jpeg">
-<img class="foto f2" src="foto2.jpeg">
-<img class="foto f3" src="foto3.jpeg">
-<img class="foto f4" src="foto4.jpeg">
-<img class="foto f5" src="foto5.jpeg">
+<div class="album">
 
-<img class="foto f6" src="foto6.jpeg">
-<img class="foto f7" src="foto7.jpeg">
-<img class="foto f8" src="foto8.jpeg">
-<img class="foto f9" src="foto9.jpeg">
-<img class="foto f10" src="foto10.jpeg">
 
-<img class="foto f11" src="foto11.jpeg">
-<img class="foto f12" src="foto12.jpeg">
-<img class="foto f13" src="foto13.jpeg">
-<img class="foto f14" src="foto14.jpeg">
-<img class="foto f15" src="foto15.jpeg">
+<h1 class="titulo">
 
-<img class="foto f16" src="foto16.jpeg">
-<img class="foto f17" src="foto17.jpeg">
-<img class="foto f18" src="foto18.jpeg">
-<img class="foto f19" src="foto19.jpeg">
-<img class="foto f20" src="foto20.jpeg">
+ARQUIVO CONFIDENCIAL
 
-<img class="foto f21" src="foto21.jpeg">
-<img class="foto f22" src="foto22.jpeg">
-<img class="foto f23" src="foto23.jpeg">
-<img class="foto f24" src="foto24.jpeg">
+</h1>
+
+
+
+<img class="foto" src="foto1.jpeg">
+<img class="foto" src="foto2.jpeg">
+<img class="foto" src="foto3.jpeg">
+<img class="foto" src="foto4.jpeg">
+<img class="foto" src="foto5.jpeg">
+
+<img class="foto" src="foto6.jpeg">
+<img class="foto" src="foto7.jpeg">
+<img class="foto" src="foto8.jpeg">
+<img class="foto" src="foto9.jpeg">
+<img class="foto" src="foto10.jpeg">
+
+<img class="foto" src="foto11.jpeg">
+<img class="foto" src="foto12.jpeg">
+<img class="foto" src="foto13.jpeg">
+<img class="foto" src="foto14.jpeg">
+<img class="foto" src="foto15.jpeg">
+
+<img class="foto" src="foto16.jpeg">
+<img class="foto" src="foto17.jpeg">
+<img class="foto" src="foto18.jpeg">
+<img class="foto" src="foto19.jpeg">
+<img class="foto" src="foto20.jpeg">
+
+<img class="foto" src="foto21.jpeg">
+<img class="foto" src="foto22.jpeg">
+<img class="foto" src="foto23.jpeg">
+<img class="foto" src="foto24.jpeg">
+
 
 
 </div>
 
+
+</div>
 
 
 
@@ -294,7 +319,7 @@ function abrirSenha(){
 
 document.getElementById("inicio").style.display="none";
 
-document.getElementById("senha").style.display="block";
+document.getElementById("senha").style.display="flex";
 
 }
 
@@ -330,7 +355,6 @@ document.getElementById("erro").innerHTML="SENHA INCORRETA";
 
 
 }
-
 
 
 </script>
