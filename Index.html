@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arquivo Confidencial</title>
 
+<style>
+body {
+    background: black;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.caixa {
+    border: 2px solid red;
+    padding: 30px;
+    width: 300px;
+    margin: auto;
+}
+
+img {
+    width: 250px;
+    margin: 10px;
+}
+
+#conteudo {
+    display: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="caixa" id="login">
+
+<h2>🔒 Arquivo Confidencial</h2>
+
+<p>Digite a senha:</p>
+
+<input type="password" id="senha">
+
+<br><br>
+
+<button onclick="entrar()">Acessar</button>
+
+<p id="erro"></p>
+
+</div>
+
+
+<div id="conteudo">
+
+<h1>Relatório Secreto</h1>
+
+<p>
+Aqui entram seus textos, pistas e mensagens.
+</p>
+
+<img src="foto1.jpg">
+
+<img src="foto2.jpg">
+
+</div>
+
+
+<script>
+
+function entrar(){
+
+let senha = document.getElementById("senha").value;
+
+
+if(senha == "07082001"){
+
+document.getElementById("login").style.display="none";
+
+document.getElementById("conteudo").style.display="block";
+
+}
+
+else{
+
+document.getElementById("erro").innerHTML="Senha incorreta";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
