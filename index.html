@@ -13,6 +13,7 @@
 box-sizing:border-box;
 }
 
+
 body{
 margin:0;
 background:#050505;
@@ -22,22 +23,30 @@ justify-content:center;
 align-items:center;
 font-family:Arial,sans-serif;
 overflow:hidden;
+perspective:1200px;
 }
+
 
 
 .container{
 text-align:center;
-transition:1s;
+width:100%;
+transform-style:preserve-3d;
 }
+
 
 
 .capa{
 width:95%;
 max-width:650px;
+display:block;
+margin:auto;
 }
 
 
+
 button{
+
 margin-top:25px;
 padding:15px 45px;
 background:#8b0000;
@@ -46,125 +55,203 @@ border:none;
 font-size:18px;
 letter-spacing:2px;
 cursor:pointer;
+
 }
 
 
 button:hover{
+
 background:#b30000;
+
 }
+
 
 
 .abrindo{
-animation:abrir 1.2s forwards;
+
+animation:abrirLivro 1.5s forwards;
+
+transform-origin:left center;
+
 }
+
+
+
+@keyframes abrirLivro{
+
+
+0%{
+
+transform:perspective(1200px) rotateY(0deg);
+
+opacity:1;
+
+}
+
+
+
+50%{
+
+transform:perspective(1200px) rotateY(-70deg);
+
+opacity:1;
+
+}
+
+
+
+100%{
+
+transform:perspective(1200px) rotateY(-120deg);
+
+opacity:0;
+
+}
+
+
+}
+
+
 
 
 .senha{
+
 display:none;
+
 color:white;
+
 text-align:center;
+
 animation:entrada 1s;
+
 }
+
 
 
 input{
+
 padding:15px;
+
 width:250px;
+
 font-size:18px;
+
 text-align:center;
+
 margin-top:20px;
-}
-
-
-@keyframes abrir{
-
-0%{
-transform:scale(1);
-opacity:1;
-}
-
-50%{
-transform:scale(1.1);
-filter:brightness(2);
-}
-
-100%{
-transform:scale(1.5);
-opacity:0;
-}
 
 }
+
 
 
 @keyframes entrada{
 
+
 from{
+
 opacity:0;
+
 transform:translateY(30px);
+
 }
+
+
 
 to{
+
 opacity:1;
+
 transform:translateY(0);
-}
 
 }
+
+
+}
+
+
 
 </style>
 
 </head>
 
 
+
 <body>
+
 
 
 <div class="container" id="inicio">
 
+
 <img class="capa" src="capa.jpg">
 
-<br>
 
 <button onclick="abrirArquivo()">
+
 ABRIR ARQUIVO
+
 </button>
 
+
 </div>
+
+
 
 
 <div class="senha" id="senha">
 
+
 <h2>DIGITE A SENHA</h2>
+
 
 <input type="password" placeholder="Senha">
 
+
 <br>
 
+
 <button>
+
 ENTRAR
+
 </button>
+
 
 </div>
 
 
+
+
+
 <script>
 
+
 function abrirArquivo(){
+
 
 document.getElementById("inicio").classList.add("abrindo");
 
 
+
 setTimeout(function(){
+
 
 document.getElementById("inicio").style.display="none";
 
+
 document.getElementById("senha").style.display="block";
 
-},1200);
+
+},1500);
+
 
 
 }
 
+
+
 </script>
+
 
 
 </body>
