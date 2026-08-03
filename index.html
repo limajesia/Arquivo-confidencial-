@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
@@ -19,16 +20,20 @@ body{
 margin:0;
 background:#050505;
 height:100vh;
+font-family:Arial,sans-serif;
+color:white;
+
 display:flex;
 justify-content:center;
 align-items:center;
-font-family:Arial,sans-serif;
-color:white;
 
 }
 
 
-.container{
+
+/* CAPA */
+
+#inicio{
 
 text-align:center;
 width:100%;
@@ -44,15 +49,21 @@ max-width:650px;
 }
 
 
+
 button{
 
 margin-top:25px;
 padding:15px 45px;
+
 background:#8b0000;
 color:white;
+
 border:none;
+
 font-size:18px;
+
 letter-spacing:2px;
+
 cursor:pointer;
 
 }
@@ -66,49 +77,68 @@ background:#b30000;
 
 
 
-.telaSenha{
+
+/* SENHA */
+
+#senha{
 
 display:none;
 text-align:center;
 
 }
-
 
 
 input{
 
 margin-top:20px;
+
 padding:15px;
+
 width:260px;
+
 font-size:18px;
+
 text-align:center;
 
 }
 
 
 
-.arquivo{
+.erro{
+
+color:red;
+
+}
+
+
+
+
+/* FUNDO DO ARQUIVO ABERTO */
+
+#arquivo{
 
 display:none;
-text-align:center;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100vh;
+
+
+background-image:url("fundo.jpg");
+
+background-size:cover;
+
+background-position:center;
 
 }
 
 
-.arquivo img{
-
-width:90%;
-max-width:500px;
-
-}
-
-
-.mensagem{
-
-margin-top:20px;
-color:#ff4444;
-
-}
 
 
 </style>
@@ -116,10 +146,12 @@ color:#ff4444;
 </head>
 
 
+
 <body>
 
 
-<div class="container" id="inicio">
+
+<div id="inicio">
 
 
 <img class="capa" src="capa.jpg">
@@ -140,7 +172,8 @@ ABRIR ARQUIVO
 
 
 
-<div class="telaSenha" id="senha">
+
+<div id="senha">
 
 
 <h2>DIGITE A SENHA</h2>
@@ -159,7 +192,7 @@ ENTRAR
 </button>
 
 
-<p class="mensagem" id="erro"></p>
+<p class="erro" id="erro"></p>
 
 
 </div>
@@ -167,18 +200,12 @@ ENTRAR
 
 
 
-<div class="arquivo" id="arquivo">
 
-
-<h1>ACESSO AUTORIZADO</h1>
-
-
-<p>
-Bem-vindo ao arquivo secreto.
-</p>
+<div id="arquivo">
 
 
 </div>
+
 
 
 
@@ -200,16 +227,14 @@ document.getElementById("senha").style.display="block";
 
 
 
-
-
 function verificarSenha(){
 
 
-let senhaDigitada = document.getElementById("codigo").value;
+let senha = document.getElementById("codigo").value;
 
 
 
-if(senhaDigitada === "07082001DRB"){
+if(senha === "07082001DRB"){
 
 
 document.getElementById("senha").style.display="none";
@@ -232,9 +257,10 @@ document.getElementById("erro").innerHTML="SENHA INCORRETA";
 }
 
 
-
 </script>
 
 
+
 </body>
+
 </html>
