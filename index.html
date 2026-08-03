@@ -16,12 +16,10 @@ box-sizing:border-box;
 
 
 body{
-
 margin:0;
 background:#050505;
 font-family:Arial,sans-serif;
 color:white;
-
 }
 
 
@@ -87,8 +85,6 @@ justify-content:center;
 align-items:center;
 flex-direction:column;
 
-text-align:center;
-
 }
 
 
@@ -117,7 +113,8 @@ color:#ff4444;
 
 
 
-/* ALBUM */
+
+/* BLOG */
 
 #arquivo{
 
@@ -139,51 +136,15 @@ background-attachment:fixed;
 
 
 
-.album{
+.blog{
 
 max-width:650px;
 
 margin:auto;
 
-display:flex;
+background:rgba(0,0,0,0.45);
 
-flex-direction:column;
-
-align-items:center;
-
-}
-
-
-
-.foto{
-
-width:90%;
-
-max-width:450px;
-
-margin:35px 0;
-
-padding:12px;
-
-background:white;
-
-box-shadow:0 8px 25px black;
-
-}
-
-
-
-.foto:nth-child(even){
-
-transform:rotate(2deg);
-
-}
-
-
-
-.foto:nth-child(odd){
-
-transform:rotate(-2deg);
+padding:30px;
 
 }
 
@@ -193,11 +154,55 @@ transform:rotate(-2deg);
 
 text-align:center;
 
-font-size:30px;
+font-size:32px;
 
-letter-spacing:4px;
+letter-spacing:5px;
 
-margin-bottom:30px;
+margin-bottom:50px;
+
+}
+
+
+
+.post{
+
+margin-bottom:70px;
+
+text-align:center;
+
+}
+
+
+
+.post img{
+
+width:100%;
+
+max-width:550px;
+
+background:white;
+
+padding:12px;
+
+box-shadow:0 10px 25px black;
+
+}
+
+
+
+.texto{
+
+margin-top:20px;
+
+font-size:20px;
+
+line-height:1.6;
+
+background:rgba(0,0,0,0.6);
+
+padding:20px;
+
+border-left:4px solid #8b0000;
 
 }
 
@@ -206,7 +211,6 @@ margin-bottom:30px;
 </style>
 
 </head>
-
 
 
 <body>
@@ -261,52 +265,84 @@ ENTRAR
 <div id="arquivo">
 
 
-<div class="album">
+<div class="blog">
 
 
 <h1 class="titulo">
-
 ARQUIVO CONFIDENCIAL
-
 </h1>
 
 
 
-<img class="foto" src="foto1.jpeg">
-<img class="foto" src="foto2.jpeg">
-<img class="foto" src="foto3.jpeg">
-<img class="foto" src="foto4.jpeg">
-<img class="foto" src="foto5.jpeg">
+<div class="post">
 
-<img class="foto" src="foto6.jpeg">
-<img class="foto" src="foto7.jpeg">
-<img class="foto" src="foto8.jpeg">
-<img class="foto" src="foto9.jpeg">
-<img class="foto" src="foto10.jpeg">
+<img src="foto1.jpeg">
 
-<img class="foto" src="foto11.jpeg">
-<img class="foto" src="foto12.jpeg">
-<img class="foto" src="foto13.jpeg">
-<img class="foto" src="foto14.jpeg">
-<img class="foto" src="foto15.jpeg">
+<div class="texto">
+Registro 01<br>
+Primeiro arquivo desbloqueado.
+</div>
 
-<img class="foto" src="foto16.jpeg">
-<img class="foto" src="foto17.jpeg">
-<img class="foto" src="foto18.jpeg">
-<img class="foto" src="foto19.jpeg">
-<img class="foto" src="foto20.jpeg">
+</div>
 
-<img class="foto" src="foto21.jpeg">
-<img class="foto" src="foto22.jpeg">
-<img class="foto" src="foto23.jpeg">
-<img class="foto" src="foto24.jpeg">
+
+
+<div class="post">
+
+<img src="foto2.jpeg">
+
+<div class="texto">
+Registro 02<br>
+Memórias importantes.
+</div>
+
+</div>
+
+
+
+<div class="post">
+
+<img src="foto3.jpeg">
+
+<div class="texto">
+Registro 03<br>
+Uma nova página da história.
+</div>
+
+</div>
+
+
+
+<!-- COPIAR ESSE BLOCO PARA AS OUTRAS FOTOS -->
+
+<div class="post">
+
+<img src="foto4.jpeg">
+
+<div class="texto">
+Registro 04
+</div>
+
+</div>
+
+
+
+<div class="post">
+
+<img src="foto5.jpeg">
+
+<div class="texto">
+Registro 05
+</div>
+
+</div>
 
 
 
 </div>
 
-
 </div>
+
 
 
 
@@ -325,16 +361,14 @@ document.getElementById("senha").style.display="flex";
 
 
 
-
-
 function verificarSenha(){
 
 
-let senha = document.getElementById("codigo").value;
+let senha=document.getElementById("codigo").value;
 
 
 
-if(senha === "07082001DRB"){
+if(senha==="07082001DRB"){
 
 
 document.getElementById("senha").style.display="none";
