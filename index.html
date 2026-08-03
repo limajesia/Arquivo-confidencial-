@@ -3,50 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Arquivo Confidencial</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+body {
+    margin: 0;
+    padding: 0;
+    background: #050505;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
-body{
-
-    background:#0b0b0b;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    min-height:100vh;
-
-    overflow:hidden;
-
-    font-family:Arial, Helvetica, sans-serif;
-
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 30px 20px;
 }
 
-#capa{
-
-    width:min(90vw,700px);
-
-    transition:.35s;
-
-    cursor:pointer;
-
-    filter:drop-shadow(0 25px 30px rgba(0,0,0,.7));
-
+h1 {
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: #b30000;
 }
 
-#capa:hover{
+img {
+    width: 100%;
+    max-width: 450px;
+    border: 3px solid #8b0000;
+    box-shadow: 0 0 20px black;
+}
 
-    transform:scale(1.02) rotate(-1deg);
+.card {
+    margin-top: 25px;
+    background: #111;
+    border: 1px solid #444;
+    padding: 20px;
+    border-radius: 10px;
+}
 
+p {
+    line-height: 1.6;
+}
+
+button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: #8b0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #c00000;
 }
 
 </style>
@@ -55,17 +68,27 @@ body{
 
 <body>
 
-<img id="capa" src="capa.jpg" alt="Arquivo Confidencial">
+<div class="container">
 
-<script>
+<h1>ARQUIVO CONFIDENCIAL</h1>
 
-document.getElementById("capa").onclick=function(){
+<img src="capa.jpg" alt="Arquivo">
 
-    alert("Em breve essa pasta será aberta...");
+<div class="card">
 
-}
+<p>
+Este arquivo contém informações especiais.
+<br><br>
+Apenas pessoas autorizadas devem acessar este conteúdo.
+</p>
 
-</script>
+<button>
+ACESSAR ARQUIVO
+</button>
+
+</div>
+
+</div>
 
 </body>
 </html>
